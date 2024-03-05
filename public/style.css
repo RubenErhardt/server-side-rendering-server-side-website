@@ -1,0 +1,29 @@
+/* style.css */
+body {
+    font-family: Arial, sans-serif;
+    background-color: lightblue;
+  }
+  
+  form {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  h1{
+    color: red;
+  }
+  .item {
+    border: 1px solid #ff0000;
+    padding: 10px;
+    margin: 10px;
+  }
+  
+  label {
+    cursor: pointer;
+  }
+  
+  button {
+    margin-top: 10px;
+    color: red;
+  }
+  
