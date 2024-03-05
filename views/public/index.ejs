@@ -4,11 +4,25 @@
 </header>
 
 <main>
-  <h1>Hello World</h1>
+  <h1>Kies een nummer</h1>
+  <form action="/" method="post">
+    <label for="number">Nummer:</label>
+    <select id="number" name="number">
+      <option value="1">Nummer 1</option>
+      <option value="2">Nummer 2</option>
+      <option value="3">Nummer 3</option>
+    </select>
+    <button type="submit">Kies</button>
+  </form>
+
+  <% if (data) { %>
+    <h2>Resultaat:</h2>
+    <p>Title: <%= data[0].title %></p>
+    <p>Description: <%= data[0].description %></p>
+  <% } %>
 </main>
 
 <footer>
-  <p>Copyright &copy; 2017</p>
 </footer>
 
 <%- include('./partials/foot') %>
