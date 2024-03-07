@@ -2,6 +2,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const progressBar = document.getElementById("progress-bar");
   const images = document.querySelectorAll(".clickable-image");
   const removeProgressButton = document.getElementById("remove-progress-button");
+  
   let clickedImages = [];
 
   // Function to fill the progress bar
