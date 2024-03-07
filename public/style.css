@@ -4,26 +4,27 @@ body {
     background-color: lightblue;
   }
   
-  form {
-    display: flex;
-    flex-wrap: wrap;
-  }
-  
-  h1{
-    color: red;
-  }
-  .item {
-    border: 1px solid #ff0000;
-    padding: 10px;
-    margin: 10px;
-  }
-  
-  label {
-    cursor: pointer;
-  }
-  
-  button {
-    margin-top: 10px;
-    color: red;
-  }
-  
+/* style.css */
+#progress-bar-container {
+  width: 100%;
+  background-color: #ddd;
+  height: 20px;
+  margin-bottom: 20px;
+}
+
+#progress-bar {
+  width: 0;
+  height: 100%;
+  background-color: #4caf50;
+}
+
+img {
+  width: 50px;
+  height: auto;
+}
+
+.con{
+  display: flex;
+  flex-wrap: wrap;
+}
+

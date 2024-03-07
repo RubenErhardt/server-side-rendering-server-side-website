@@ -1,0 +1,30 @@
+<%- include('./partials/head') %>
+<h2>Uit deze antwoorden, in hoeverre ben je hier mee bezig</h2>
+<form action="/" method="post">
+    <% if (data && data.length > 0) { %>
+        <% clickedImages.forEach(index => { %>
+            <% const currentItem = data[index]; %>
+            <div class="item">
+                <img src="https://fdnd-agency.directus.app/assets/<%= currentItem.icon %>" width="100">
+                <p><strong>Description:</strong> <%= currentItem.description %></p>
+                <label for="rating_<%= currentItem.id %>">Rate from 1 to 5:</label>
+                <input type="radio" id="rating_<%= currentItem.id %>_1" name="<%= currentItem.id %>_rating" value="1">
+                <label for="rating_<%= currentItem.id %>_1">1</label>
+                <input type="radio" id="rating_<%= currentItem.id %>_2" name="<%= currentItem.id %>_rating" value="2">
+                <label for="rating_<%= currentItem.id %>_2">2</label>
+                <input type="radio" id="rating_<%= currentItem.id %>_3" name="<%= currentItem.id %>_rating" value="3">
+                <label for="rating_<%= currentItem.id %>_3">3</label>
+                <input type="radio" id="rating_<%= currentItem.id %>_4" name="<%= currentItem.id %>_rating" value="4">
+                <label for="rating_<%= currentItem.id %>_4">4</label>
+                <input type="radio" id="rating_<%= currentItem.id %>_5" name="<%= currentItem.id %>_rating" value="5">
+                <label for="rating_<%= currentItem.id %>_5">5</label>
+            </div>
+        <% }); %>
+        <button type="submit">Submit</button>
+    <% } else { %>
+        <p>No data available</p>
+    <% } %>
+</form>
+<%- include('./partials/foot') %>
+
+

@@ -1,25 +1,20 @@
 <%- include('./partials/head') %>
-<script src="/script.js"></script>
 <header>
+  <img src="" alt="">
 </header>
 
 <main>
-  <h1>HALLO</h1>
-  <form action="/" method="post">
-    <% if (data && data.length > 0) { %>
-      <% data.forEach(item => { %>
-        <div class="item">
-          <input type="radio" id="<%= item.id %>" name="selectedItem" value="<%= item.id %>">
-          <label for="<%= item.id %>">
-            <h1 class="id"><%= item.id %></h1>
-            <p><strong>Title:</strong> <%= item.title %></p>
-            <p><strong>Description:</strong> <%= item.description %></p>
-          </label>
-        </div>
-      <% }); %>
-      <button type="submit">Submit</button>
-    <% } %>
-  </form>
+  <h1>Kies 5 dingen die bij jouw bedrijf passen</h1>
+  <div id="progress-bar-container">
+    <div id="progress-bar"></div>
+  </div>
+
+  <% data.forEach(item => { %>
+    <div class="con">
+    <img src="https://fdnd-agency.directus.app/assets/<%= item.icon %>" class="clickable-image">
+  </div>
+  <% }); %>
+  
 </main>
 
 <footer>
