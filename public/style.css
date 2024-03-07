@@ -1,30 +1,96 @@
 /* style.css */
 body {
     font-family: Arial, sans-serif;
-    background-color: lightblue;
+    background: #272932;
+    color: white;
+    justify-content: space-between;
+    padding: 50px 50px 50px 50px;
+    font-family:"DM Sans", sans-serif;
+    max-width: 1050px;
+    margin: 0 auto;
   }
+
+  h1{
+    font-size: 28px;
+    text-align: center;
+    max-width: 800px;
+    max-height: 80px;
+    margin: 0 auto;
+    margin-bottom: 30px;
+  }
+
+  span{
+    color: green;
+  }
+
+  h2{
+    font-size: 14px;
+    font-style: italic;
+    text-align: center;
+    color: #a1afaf;
+    max-width: 730px;
+    max-height: 44px;
+    margin: 0 auto;
+  }
+
+  h3{
+    font-size: 18px;
+    text-align: center;
+  }
+
+
+
+  .container-logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 30px;
+    background-color: #AD97C9;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+#logo {
+    font-size: 20px; 
+    color: black;
+}
+
+
   
 /* style.css */
 #progress-bar-container {
   width: 100%;
-  background-color: #ddd;
+  background-color: #ffffff;
   height: 20px;
   margin-bottom: 20px;
+  border-radius: 20px;
+  overflow: hidden; /* Ensure the inner progress bar is clipped */
 }
 
 #progress-bar {
-  width: 0;
   height: 100%;
-  background-color: #4caf50;
+  background: #AD97C9;
+  border-radius: 20px;
+  transition: width 0.5s ease; /* Add a transition for smooth fill effect */
 }
 
-img {
-  width: 50px;
+/* Example styling for the progress bar when it's filled */
+#progress-bar.filled {
+  width: 0%;
+}
+
+
+.clickable-image {
+  width: 110px;
   height: auto;
+  cursor: pointer; 
+  margin: 0.2em;
 }
 
-.con{
+.container-sdg{
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
 }
 
