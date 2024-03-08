@@ -17,9 +17,15 @@
   <h2>Denk bijv aan het feit dat jouw bedrijf loon betaalt, waardoor SDG 1 en 2 worden geholpen.Of kijk naar de arbeidsomstandigheden (buro, stoel, licht, werktijden)  waarmee SDG 3 wordt geholpen.</h2>
   <h3 id="choose-counter"></h3>
   <div class="container-sdg">
-  <% data.forEach(item => { %>
-    <img src="https://fdnd-agency.directus.app/assets/<%= item.icon %>" class="clickable-image">
-  <% }); %>
+    <% data.forEach(item => { %>
+      <img src="https://fdnd-agency.directus.app/assets/<%= item.icon %>" class="clickable-image">
+    <% }); %>
+  <!--
+    <% data.forEach(item => { %>
+      <h2><%= item.description %></h2>
+    <% }); %>
+    </div>
+    -->
 </div>
 </main>
 
