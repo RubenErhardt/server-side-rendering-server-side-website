@@ -2,7 +2,9 @@ document.addEventListener("DOMContentLoaded", function () {
   const progressBar = document.getElementById("progress-bar");
   const images = document.querySelectorAll(".clickable-image");
   const removeProgressButton = document.getElementById("remove-progress-button");
-  
+  const chooseCounter = document.getElementById("choose-counter");
+
+  let remainingImages = 5;
   let clickedImages = [];
 
   // Function to fill the progress bar
@@ -15,17 +17,21 @@ document.addEventListener("DOMContentLoaded", function () {
   function removeProgress() {
     progressBar.style.width = "0%";
     progressBar.classList.remove('filled');
+    remainingImages = 5;
     clickedImages = [];
+    updateChooseCounter();
   }
 
   // Function to handle image clicks
   function handleImageClick(index) {
-    if (clickedImages.length < 5) {
-      clickedImages.push(index);
-      const progressPercentage = (clickedImages.length / 5) * 100;
+    if (remainingImages > 0) {
+      const progressPercentage = ((5 - remainingImages + 1) / 5) * 100;
       progressBar.style.width = progressPercentage + "%";
 
-      if (clickedImages.length === 5) {
+      remainingImages--;
+      clickedImages.push(index);
+
+      if (remainingImages === 0) {
         fetch('/updateClickedImages', {
           method: 'POST',
           headers: {
@@ -42,7 +48,14 @@ document.addEventListener("DOMContentLoaded", function () {
           console.error('Error updating clickedImages:', error);
         });
       }
+
+      updateChooseCounter();
     }
+  }
+
+  // Function to update the "KIES X UIT 5" text
+  function updateChooseCounter() {
+    chooseCounter.textContent = `KIES NOG ${remainingImages} IMAGES DIE GOED BIJ JOUW BEDRIJF PASSEN`;
   }
 
   // Initially, remove progress and set up click handlers
