@@ -135,6 +135,23 @@ input {
   transition: width 0.5s ease;
 }
 
+main button{
+  margin-top: 20px;
+  width: 50%;
+  margin-left: 280px;
+  padding: 15px;
+  background-color: #ffffff;
+  border: none;
+  color: rgb(0, 0, 0);
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+
+main button:hover {
+  background-color: #906591;
+}
+
 /* Example styling for the progress bar when it's filled */
 #progress-bar.filled {
   width: 0%;
