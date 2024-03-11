@@ -1,6 +1,20 @@
 <%- include('./partials/head') %>
-<h2>Uit deze antwoorden, in hoeverre ben je hier mee bezig</h2>
-<form action="/" method="post">
+<header>
+    <div class="container-logo">
+      <div id="logo">
+        <i class="fas fa-building"></i> 
+    </div>
+    </div>
+    <button id="remove-progress-button">Annuleer ✖</button>
+    </header>
+    
+    <div id="progress-bar-container">
+      <div id="progress-bar"></div>
+    </div>
+
+<h1>Kan je per SDG op een schaal van 1/5 aangeven hoe groot de <span>positieve</span> bedrijage is?*</h2>
+<h2>Denk hier heel zorgvuldig overna, dit is belangrijk voor de uiteindelijke uitslag.</h3>
+<form action="/dashboard" method="post">
     <% if (data && data.length > 0) { %>
         <% clickedImages.forEach(index => { %>
             <% const currentItem = data[index]; %>
@@ -20,10 +34,12 @@
                 <label for="rating_<%= currentItem.id %>_5">5</label>
             </div>
         <% }); %>
-        <button type="submit">Submit</button>
     <% } else { %>
         <p>No data available</p>
     <% } %>
+    <form action="/dashboard" method="post">
+        <button type="submit" id="submit-button" class="vragenlijst-btn">Submit</button>
+      </form>
 </form>
 <%- include('./partials/foot') %>
 
