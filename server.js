@@ -8,11 +8,10 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static('public'));
 app.use(session({
-    secret: 'your-secret-key',
+    secret: 'FDND',
     resave: false,
     saveUninitialized: true,
 }));
-app.use(express.json());
 
 app.set('view engine', 'ejs');
 app.set('views', './views');
