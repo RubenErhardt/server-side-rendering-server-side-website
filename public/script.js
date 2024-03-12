@@ -41,7 +41,7 @@ document.addEventListener("DOMContentLoaded", function () {
         })
         .then(response => response.json())
         .then(data => {
-          // Redirect to vragenlijst.ejs
+      
           window.location.href = "vragenlijst";
         })
         .catch(error => {
@@ -55,7 +55,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Function to update the "KIES X UIT 5" text
   function updateChooseCounter() {
-    chooseCounter.textContent = `KIES NOG ${remainingImages} IMAGES DIE GOED BIJ JOUW BEDRIJF PASSEN`;
+    chooseCounter.textContent = `KIES NOG ${remainingImages} SDG'S DIE GOED BIJ JOUW BEDRIJF PASSEN`;
   }
 
   // Initially, remove progress and set up click handlers
