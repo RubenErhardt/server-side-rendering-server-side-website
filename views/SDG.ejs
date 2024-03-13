@@ -21,14 +21,10 @@
     <% data.forEach(item => { %>
       <img src="https://fdnd-agency.directus.app/assets/<%= item.icon %>" class="clickable-image">
     <% }); %>
-  <!--
-    <% data.forEach(item => { %>
-      <h2><%= item.description %></h2>
-    <% }); %>
-    </div>
-    -->
+ 
 </div>
 
+<button id="submit-button">Submit</button>
 <form action="/stakeholder" method="post">
   <button type="submit">Back to stakeholders.</button>
 </form>

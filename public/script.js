@@ -1,11 +1,18 @@
+console.log('Script is running');
+
+
 document.addEventListener("DOMContentLoaded", function () {
+
   const progressBar = document.getElementById("progress-bar");
   const images = document.querySelectorAll(".clickable-image");
   const removeProgressButton = document.getElementById("remove-progress-button");
   const chooseCounter = document.getElementById("choose-counter");
+  const submitButton = document.getElementById("submit-button");
 
   let remainingImages = 5;
   let clickedImages = [];
+
+  // Functions
 
   // Function to fill the progress bar
   function fillProgressBar() {
@@ -46,28 +53,17 @@ document.addEventListener("DOMContentLoaded", function () {
       remainingImages--;
       clickedImages.push(index);
       images[index].style.filter = "grayscale(100%)";
-  
     }
+
 
     updateProgressBar();
     updateChooseCounter();
 
     if (remainingImages === 0) {
-      // Perform the desired action when all images are selected
-      fetch('/updateClickedImages', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ clickedImages }),
-      })
-      .then(response => response.json())
-      .then(data => {
-        window.location.href = "vragenlijst";
-      })
-      .catch(error => {
-        console.error('Error updating clickedImages:', error);
-      });
+      // Disable the submit button to prevent automatic redirection
+      submitButton.disabled = false;
+    } else {
+      submitButton.disabled = true;
     }
   }
 
@@ -81,11 +77,28 @@ document.addEventListener("DOMContentLoaded", function () {
   function updateChooseCounter() {
     chooseCounter.textContent = `KIES NOG ${remainingImages} SDG'S DIE GOED BIJ JOUW BEDRIJF PASSEN`;
   }
-
-  // Initially, remove progress and set up click handlers
   removeProgress();
+  // Function to handle submission
+  function handleSubmit() {
+    if (remainingImages === 0) {
+      // Perform the desired action when the submit button is clicked and all images are selected
+      fetch('/updateClickedImages', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ clickedImages }),
+      })
+      .then(response => response.json())
+      .then(data => {
+        window.location.href = "vragenlijst";
+      })
+    } else {
+      // Display a message or take other action if not all images are selected
+      alert('Please select all 5 images before submitting.');
+    }
+  }
 
-  // Add an event listener to the remove progress button
   removeProgressButton.addEventListener("click", removeProgress);
 
   // Attach image click handlers
@@ -94,4 +107,7 @@ document.addEventListener("DOMContentLoaded", function () {
       handleImageClick(index);
     });
   });
+
+  // Add an event listener to the submit button
+  submitButton.addEventListener("click", handleSubmit);
 });
