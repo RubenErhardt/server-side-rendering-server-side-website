@@ -1,0 +1,17 @@
+<%- include('./partials/head') %>
+<h1>Kies een stakeholder.</h1>
+<h2>Vergeet niet je kan altijd teruggaan om een andere stakeholder aan te klikken</h2>
+
+<div id="choosable-items">
+    <% data.forEach(item => { %>
+      <label>
+        <input type="checkbox" name="chosenItems" value="<%= item.name %>">
+        <%= item.name %>
+      </label>
+    <% }); %>
+  </div>
+
+<form action="/SDG" method="post">
+    <button type="submit">Naar de SDG's!</button>
+  </form>
+<%- include('./partials/foot') %>

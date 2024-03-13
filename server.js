@@ -18,102 +18,65 @@ app.set('views', './views');
 app.set('port', process.env.PORT || 8000);
 
 app.get('/', async (req, res) => {
-    try {
-        const apiUrl = 'https://fdnd-agency.directus.app/items/hf_sdgs';
-        const response = await fetchJson(apiUrl);
-        const data = response.data || [];
-
-        res.render('home', { data });
-    } catch (error) {
-        console.error('Error fetching data:', error);
-        res.status(500).json({ error: 'Internal Server Error' });
-    }
+    const apiUrl = 'https://fdnd-agency.directus.app/items/hf_sdgs';
+    const response = await fetchJson(apiUrl);
+    const data = response.data || [];
+    res.render('home', { data });
 });
 
 app.post('/', async (req, res) => {
-    try {
-        const apiUrl = 'https://fdnd-agency.directus.app/items/hf_sdgs';
-        const response = await fetchJson(apiUrl);
-        const data = response.data || [];
-
-        req.session.data = data; 
-
-        res.render('home', { data });
-    } catch (error) {
-        console.error('Error fetching data:', error);
-        res.status(500).json({ error: 'Internal Server Error' });
-    }
+    const apiUrl = 'https://fdnd-agency.directus.app/items/hf_sdgs';
+    const response = await fetchJson(apiUrl);
+    const data = response.data || [];
+    req.session.data = data;
+    res.render('home', { data });
 });
 
 app.post('/SDG', async (req, res) => {
-    try {
-        const apiUrl = 'https://fdnd-agency.directus.app/items/hf_sdgs';
-        const response = await fetchJson(apiUrl);
-        const data = response.data || [];
+    const apiUrl = 'https://fdnd-agency.directus.app/items/hf_sdgs';
+    const response = await fetchJson(apiUrl);
+    const data = response.data || [];
+    req.session.data = data; 
+    res.render('SDG', { data });
+});
 
-        req.session.data = data; 
-
-        res.render('SDG', { data });
-    } catch (error) {
-        console.error('Error fetching data:', error);
-        res.status(500).json({ error: 'Internal Server Error' });
-    }
+app.post('/stakeholder', async (req, res) => {
+    const apiUrl = 'https://fdnd-agency.directus.app/items/hf_stakeholders';
+    const response = await fetchJson(apiUrl);
+    const data = response.data || [];
+    req.session.data = data; 
+    res.render('stakeholder', { data });
 });
 
 app.post('/vragenlijst', async (req, res) => {
-    try {
-        const apiUrl = 'https://fdnd-agency.directus.app/items/hf_sdgs';
-        const response = await fetchJson(apiUrl);
-        const data = response.data || [];
-
-        req.session.data = data; 
-
-        res.render('vragenlijst', { data });
-    } catch (error) {
-        console.error('Error fetching data:', error);
-        res.status(500).json({ error: 'Internal Server Error' });
-    }
+    const apiUrl = 'https://fdnd-agency.directus.app/items/hf_sdgs';
+    const response = await fetchJson(apiUrl);
+    const data = response.data || [];
+    req.session.data = data; 
+    res.render('vragenlijst', { data });
 });
 
 app.post('/dashboard', async (req, res) => {
-    try {
-        const apiUrl = 'https://fdnd-agency.directus.app/items/hf_sdgs';
-        const response = await fetchJson(apiUrl);
-        const data = response.data || [];
-
-        req.session.data = data; 
-
-        res.render('dashboard', { data });
-    } catch (error) {
-        console.error('Error fetching data:', error);
-        res.status(500).json({ error: 'Internal Server Error' });
-    }
+    const apiUrl = 'https://fdnd-agency.directus.app/items/hf_sdgs';
+    const response = await fetchJson(apiUrl);
+    const data = response.data || [];
+    req.session.data = data; 
+    res.render('dashboard', { data });
 });
-
-
 
 app.post('/updateClickedImages', (req, res) => {
     const { clickedImages } = req.body;
     console.log('Received Clicked Images:', clickedImages);
     req.session.clickedImages = clickedImages; // Store clickedImages in session
-
     res.json({ success: true });
 });
 
 app.get('/vragenlijst', async (req, res) => {
-    try {
-        const apiUrl = 'https://fdnd-agency.directus.app/items/hf_sdgs';
-        const response = await fetchJson(apiUrl);
-        const data = response.data || [];
-
-        // Retrieve clickedImages from session
-        const clickedImages = req.session.clickedImages || [];
-
-        res.render('vragenlijst', { data, clickedImages });
-    } catch (error) {
-        console.error('Error fetching data:', error);
-        res.status(500).json({ error: error.message });
-    }
+    const apiUrl = 'https://fdnd-agency.directus.app/items/hf_sdgs';
+    const response = await fetchJson(apiUrl);
+    const data = response.data || [];
+    const clickedImages = req.session.clickedImages || [];
+    res.render('vragenlijst', { data, clickedImages });
 });
 
 app.listen(app.get('port'), () => {

@@ -20,37 +20,61 @@ document.addEventListener("DOMContentLoaded", function () {
     remainingImages = 5;
     clickedImages = [];
     updateChooseCounter();
+    resetImageStyles();
+  }
+
+  // Function to reset image styles
+  function resetImageStyles() {
+    images.forEach(image => {
+      image.style.filter = "grayscale(0%)"; // Reset grayscale filter
+    });
   }
 
   // Function to handle image clicks
   function handleImageClick(index) {
-    if (remainingImages > 0) {
-      const progressPercentage = ((5 - remainingImages + 1) / 5) * 100;
-      progressBar.style.width = progressPercentage + "%";
+    const isSelected = images[index].classList.contains('selected');
 
+    if (isSelected) {
+      // Deselect the image
+      images[index].classList.remove('selected');
+      images[index].style.filter = "grayscale(0%)";
+      remainingImages++;
+      clickedImages = clickedImages.filter(clickedIndex => clickedIndex !== index);
+    } else if (remainingImages > 0) {
+      // Select the image
+      images[index].classList.add('selected');
       remainingImages--;
       clickedImages.push(index);
-
-      if (remainingImages === 0) {
-        fetch('/updateClickedImages', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify({ clickedImages }),
-        })
-        .then(response => response.json())
-        .then(data => {
-      
-          window.location.href = "vragenlijst";
-        })
-        .catch(error => {
-          console.error('Error updating clickedImages:', error);
-        });
-      }
-
-      updateChooseCounter();
+      images[index].style.filter = "grayscale(100%)";
+  
     }
+
+    updateProgressBar();
+    updateChooseCounter();
+
+    if (remainingImages === 0) {
+      // Perform the desired action when all images are selected
+      fetch('/updateClickedImages', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ clickedImages }),
+      })
+      .then(response => response.json())
+      .then(data => {
+        window.location.href = "vragenlijst";
+      })
+      .catch(error => {
+        console.error('Error updating clickedImages:', error);
+      });
+    }
+  }
+
+  // Function to update progress bar
+  function updateProgressBar() {
+    const progressPercentage = ((5 - remainingImages) / 5) * 100;
+    progressBar.style.width = progressPercentage + "%";
   }
 
   // Function to update the "KIES X UIT 5" text
