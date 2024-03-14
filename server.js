@@ -64,9 +64,9 @@ app.post('/dashboard', async (req, res) => {
     res.render('dashboard', { data });
 });
 
-app.post('/updateClickedImages', (req, res) => {
+app.post('/ClickedImagesSDG', (req, res) => {
     const { clickedImages } = req.body;
-    console.log('Received Clicked Images:', clickedImages);
+    console.log(clickedImages)
     req.session.clickedImages = clickedImages; // Store clickedImages in session
     res.json({ success: true });
 });

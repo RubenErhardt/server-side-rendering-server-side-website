@@ -30,10 +30,9 @@ document.addEventListener("DOMContentLoaded", function () {
     resetImageStyles();
   }
 
-  // Function to reset image styles
+
   function resetImageStyles() {
     images.forEach(image => {
-      image.style.filter = "grayscale(0%)"; // Reset grayscale filter
     });
   }
 
@@ -42,30 +41,28 @@ document.addEventListener("DOMContentLoaded", function () {
     const isSelected = images[index].classList.contains('selected');
 
     if (isSelected) {
-      // Deselect the image
-      images[index].classList.remove('selected');
-      images[index].style.filter = "grayscale(0%)";
-      remainingImages++;
-      clickedImages = clickedImages.filter(clickedIndex => clickedIndex !== index);
+        // Deselect the image
+        images[index].classList.remove('selected');
+        remainingImages++;
+        clickedImages = clickedImages.filter(clickedIndex => clickedIndex !== index);
     } else if (remainingImages > 0) {
-      // Select the image
-      images[index].classList.add('selected');
-      remainingImages--;
-      clickedImages.push(index);
-      images[index].style.filter = "grayscale(100%)";
+        // Select the image
+        images[index].classList.add('selected');
+        remainingImages--;
+        clickedImages.push(index);
     }
-
 
     updateProgressBar();
     updateChooseCounter();
 
     if (remainingImages === 0) {
-      // Disable the submit button to prevent automatic redirection
-      submitButton.disabled = false;
+        // Enable submit button to proceed
+        submitButton.disabled = false;
     } else {
-      submitButton.disabled = true;
+        submitButton.disabled = true;
     }
-  }
+}
+
 
   // Function to update progress bar
   function updateProgressBar() {
@@ -82,7 +79,7 @@ document.addEventListener("DOMContentLoaded", function () {
   function handleSubmit() {
     if (remainingImages === 0) {
       // Perform the desired action when the submit button is clicked and all images are selected
-      fetch('/updateClickedImages', {
+      fetch('/ClickedImagesSDG', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

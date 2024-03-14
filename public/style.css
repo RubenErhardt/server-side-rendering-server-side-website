@@ -164,6 +164,11 @@ main button:hover {
   margin: 0.19em;
   transition: transform 0.3s ease-in-out; 
   border-radius: 5px;
+  filter: grayscale(0%); 
+}
+
+.clickable-image.selected{
+  filter: grayscale(100%); 
 }
 
 .clickable-image:hover {
