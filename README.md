@@ -2,27 +2,29 @@
 Welkom op mijn read.me van server-side-rendering-server-side-website. Ik moest voor opdrachtgever Handprint/Footprint een website maken, waarin verschillende bedrijven kunnen zien hoe goed ze bezig zijn met de SDG's. Dit moet gedisplayed worden in een dashboard.
 
 ## Projectoverzicht
-Live link naar de website: [The Startup - Responsive Interactieve Website](https://rubenerhardt.github.io/the-startup-responsive-interactieve-website/)
+Live link naar de website: https://www-handprint-footprint-com.onrender.com
 
-### Overzicht
-Hier is een blik op wat je kunt verwachten van dit project.
+## Overzicht
+Hier is een blik op wat je kunt verwachten van dit project:
 
-#### Wat mag je verwachten?
+### Verken Duurzame Ontwikkelingsdoelen (SDG's)
+De website biedt een interactieve verkenning van de SDG's, waarbij gebruikers afbeeldingen kunnen selecteren die overeenkomen met de doelen die ze willen ondersteunen.
 
-##### Responsieve Vormgeving: 
-Mijn website past zich aan aan verschillende schermformaten, waardoor een goede ervaring op zowel desktops als mobiele apparaten wordt gegarandeerd.
+### Selecteer SDG's die bij uw bedrijf passen
+Gebruikers kunnen klikbare afbeeldingen selecteren die overeenkomen met de SDG's die relevant zijn voor hun bedrijf. Door op de afbeeldingen te klikken, kunnen ze hun keuzes maken.
 
-##### Interactieve Elementen: 
-Verwacht boeiende interactie. Van geanimeerde elementen tot een filstersysteem. 
+### Voortgangscontrole en Vragenlijst
+Na het selecteren van de SDG's, kunnen gebruikers doorgaan naar een vragenlijst. De voortgang wordt bijgehouden via een voortgangsbalk en gebruikers worden aangemoedigd om alle vijf de SDG's te selecteren voordat ze verder gaan.
 
-#### Technische Details
+### Informatie over Stakeholders en Dashboard
+De website biedt ook informatie over stakeholders en een dashboard waar gebruikers hun voortgang kunnen volgen en verdere acties kunnen ondernemen.
 
-##### Bouwtechnologieën: 
-HTML, CSS en JavaScript zijn ingezet om een solide basis te bieden voor mijn website.
-
-#### Testfase: 
-De website heeft uitgebreide tests ondergaan om de functionaliteit en responsiviteit op verschillende browsers en apparaten te waarborgen.
+## Bouwtechnologieën: 
+EJS, CSS, JS NODE zijn ingezet om een solide basis te bieden voor mijn website.
 
 ## Desktop Preview
-![image](https://github.com/RubenErhardt/the-startup-responsive-interactieve-website/assets/144007147/11e45cce-554e-4f71-9d01-87728caffc05)
-![image](https://github.com/RubenErhardt/the-startup-responsive-interactieve-website/assets/144007147/74980292-a18a-4f2b-ae55-34b377edac31)
+![6c156d4f607e36b397055cca355b7a23](https://github.com/RubenErhardt/server-side-rendering-server-side-website/assets/144007147/f13d9a03-4bce-45af-9251-02d8f0094b6f)
+![0fbabcb652c819cc0e24c809b133adfb](https://github.com/RubenErhardt/server-side-rendering-server-side-website/assets/144007147/85bd6235-53a8-4224-a5ae-9ceea419344e)
+![3c72e7e0b469198859ede1426ca0a4b0](https://github.com/RubenErhardt/server-side-rendering-server-side-website/assets/144007147/28fdec34-5026-4ac7-8d4a-0699534a309f)
+![18ff1e70225abdf6576654ec416987db](https://github.com/RubenErhardt/server-side-rendering-server-side-website/assets/144007147/d1ce9eb6-fe29-4118-b5dc-19a77141317e)
+
