@@ -22,6 +22,12 @@ De website biedt ook informatie over stakeholders en een dashboard waar gebruike
 ## Bouwtechnologieën: 
 EJS, CSS, JS NODE zijn ingezet om een solide basis te bieden voor mijn website.
 
+## Installatie 
+- Kloon eerst de code. Klik op de groene knop "Code" en kies voor "Clone" of "Download ZIP".
+- Als je Node.js hebt geïnstalleerd, open je de terminal. Je vindt de terminalknop bovenaan of gebruik de sneltoets Ctrl + `.
+- Typ vervolgens npm start of npm run dev om de server te starten.
+- Als je de server wilt afsluiten, gebruik dan Ctrl + C in de terminal.
+
 ## Desktop Preview
 ![6c156d4f607e36b397055cca355b7a23](https://github.com/RubenErhardt/server-side-rendering-server-side-website/assets/144007147/f13d9a03-4bce-45af-9251-02d8f0094b6f)
 ![0fbabcb652c819cc0e24c809b133adfb](https://github.com/RubenErhardt/server-side-rendering-server-side-website/assets/144007147/85bd6235-53a8-4224-a5ae-9ceea419344e)
